@@ -1,0 +1,6 @@
+﻿  main.cpp
+F:\Projects\psycho-physics\psycho-physics-engine\psycho-physics-engine\psycho\main.cpp(37,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\Projects\psycho-physics\psycho-physics-engine\psycho-physics-engine\psycho\main.cpp(37,29): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\Projects\psycho-physics\psycho-physics-engine\psycho-physics-engine\psycho\main.cpp(38,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\Projects\psycho-physics\psycho-physics-engine\psycho-physics-engine\psycho\main.cpp(38,29): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  psycho-physics-engine.vcxproj -> F:\Projects\psycho-physics\psycho-physics-engine\x64\Debug\psycho-physics-engine.exe

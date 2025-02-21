@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\Projects\\psycho-physics\\psycho-physics-engine\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CF8B076C-3F56-43F3-B539-EC4EC02FC4D0}|psycho-physics-engine\\psycho-physics-engine.vcxproj|F:\\Projects\\psycho-physics\\psycho-physics-engine\\psycho-physics-engine\\psycho\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CF8B076C-3F56-43F3-B539-EC4EC02FC4D0}|psycho-physics-engine\\psycho-physics-engine.vcxproj|solutionrelative:psycho-physics-engine\\psycho\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF8B076C-3F56-43F3-B539-EC4EC02FC4D0}|psycho-physics-engine\\psycho-physics-engine.vcxproj|F:\\Projects\\psycho-physics\\psycho-physics-engine\\psycho-physics-engine\\psycho\\psycho.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CF8B076C-3F56-43F3-B539-EC4EC02FC4D0}|psycho-physics-engine\\psycho-physics-engine.vcxproj|solutionrelative:psycho-physics-engine\\psycho\\psycho.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "psycho.h",
+              "DocumentMoniker": "F:\\Projects\\psycho-physics\\psycho-physics-engine\\psycho-physics-engine\\psycho\\psycho.h",
+              "RelativeDocumentMoniker": "psycho-physics-engine\\psycho\\psycho.h",
+              "ToolTip": "F:\\Projects\\psycho-physics\\psycho-physics-engine\\psycho-physics-engine\\psycho\\psycho.h",
+              "RelativeToolTip": "psycho-physics-engine\\psycho\\psycho.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-21T13:21:03.555Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "F:\\Projects\\psycho-physics\\psycho-physics-engine\\psycho-physics-engine\\psycho\\main.cpp",
+              "RelativeDocumentMoniker": "psycho-physics-engine\\psycho\\main.cpp",
+              "ToolTip": "F:\\Projects\\psycho-physics\\psycho-physics-engine\\psycho-physics-engine\\psycho\\main.cpp",
+              "RelativeToolTip": "psycho-physics-engine\\psycho\\main.cpp",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-21T11:40:15.387Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
