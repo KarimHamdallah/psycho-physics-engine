@@ -1,18 +1,92 @@
 #pragma once
 #include <cmath>
 
-namespace psycho
+namespace psycho2D
 {
+
+	///////////////////////////// Math Engine ///////////////////////////////
+
 	struct vec2
 	{
-		float x, y = 0.0f;
+		union
+		{
+			struct { float x, y; };
+			float arr[2];
+		};
 
-		void Add(const vec2& v)
+		float operator[](int index)
+		{
+			return arr[index];
+		}
+
+		vec2()
+			: x(0.0f), y(0.0f) {
+		}
+
+		vec2(float x, float y)
+			: x(x), y(y) {
+		}
+
+		vec2(float val)
+			: x(val), y(val) {
+		}
+
+		void add(const vec2& v)
 		{
 			x += v.x;
 			y += v.y;
 		}
+
+		void sub(const vec2& v)
+		{
+			x -= v.x;
+			y -= v.y;
+		}
+
+		void scale(float val)
+		{
+			x *= val;
+			y *= val;
+		}
+
+		float length()
+		{
+			return sqrtf((x * x) + (y * y));
+		}
+
+		float magnitude()
+		{
+			return length();
+		}
+
+		float lengthsqrd()
+		{
+			return (x * x) + (y * y);
+		}
+
+		void normalize()
+		{
+			float l = length();
+			vec2 normalized = { 0.0f, 0.0f };
+
+			if (l > 0)
+			{
+				normalized.x = x / l;
+				normalized.y = y / l;
+			}
+
+			x = normalized.x;
+			y = normalized.y;
+		}
 	};
+
+	vec2 sub(const vec2& v1, const vec2& v2)
+	{
+		vec2 result(0.0f);
+		result.x = v1.x - v2.x;
+		result.y = v1.y - v2.y;
+		return result;
+	}
 
 	float length(const vec2& v)
 	{
@@ -30,7 +104,7 @@ namespace psycho
 	{
 		float l = length(v);
 		vec2 normalized = { 0.0f, 0.0f };
-		
+
 		if (l > 0)
 		{
 			normalized.x = v.x / l;
@@ -39,12 +113,13 @@ namespace psycho
 		return normalized;
 	}
 
+	float dot(const vec2& v1, const vec2& v2)
+	{
+		return v1.x * v2.x + v1.y * v2.y;
+	}
 
 
-
-
-
-	//////////////////// Mainfold ////////////////////
+	//////////////////// Manifold ////////////////////
 	struct collsion_manifold
 	{
 		bool collided = false;
@@ -60,7 +135,7 @@ namespace psycho
 		float r;
 	};
 
-	collsion_manifold circlevscircle(const circle& c1, const circle& c2)
+	collsion_manifold circle_vs_circle(const circle& c1, const circle& c2)
 	{
 		float r = c1.r + c2.r;
 		float dist = length(c1.c, c2.c);
@@ -73,15 +148,10 @@ namespace psycho
 		manifold.collided = true;
 		manifold.penterationdepth = r - dist;
 		
-		// calculate
-		vec2 collsion_normal = { c2.c.x - c1.c.x, c2.c.y - c1.c.y };
-		// normalize
-		collsion_normal = normalize(collsion_normal);
-		// scale
-		collsion_normal.x *= manifold.penterationdepth;
-		collsion_normal.y *= manifold.penterationdepth;
-
-		manifold.normal = collsion_normal;
+		// calculate normal
+		manifold.normal = sub(c2.c, c1.c);
+		manifold.normal.normalize();
+		manifold.normal.scale(manifold.penterationdepth);
 
 		return manifold;
 	}

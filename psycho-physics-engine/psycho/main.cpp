@@ -10,12 +10,10 @@ const int ScreenHeight = 600;
 
 int main()
 {
-	std::cout << "Hello!\n";
+	InitWindow(ScreenWidth, ScreenHeight, "psycho2D");
 
-	InitWindow(ScreenWidth, ScreenHeight, "basic window");
-
-    psycho::circle c1{ {400.0f, 300.0f}, 20.0f };
-    psycho::circle c2{ {450.0f, 350.0f}, 20.0f };
+    psycho2D::circle c1{ psycho2D::vec2(0.0f), 50.0f };
+    psycho2D::circle c2{ psycho2D::vec2(ScreenWidth * 0.5f, ScreenHeight * 0.5f), 50.0f };
 
 
     while (!WindowShouldClose())
@@ -24,14 +22,13 @@ int main()
 
         ClearBackground({ 0, 0, 0, 255 });
 
-        c1.c.x = GetMousePosition().x;
-        c1.c.y = GetMousePosition().y;
+        c1.c = psycho2D::vec2(GetMousePosition().x, GetMousePosition().y);
 
-        psycho::collsion_manifold collision_data = psycho::circlevscircle(c1, c2);
+        psycho2D::collsion_manifold collision_data = psycho2D::circle_vs_circle(c1, c2);
 
         if (collision_data.collided)
         {
-            c2.c.Add(collision_data.normal);
+            c2.c.add(collision_data.normal);
         }
 
         DrawCircleLines(c1.c.x, c1.c.y, c1.r, GREEN);
