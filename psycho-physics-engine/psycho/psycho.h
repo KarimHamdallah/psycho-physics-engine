@@ -1,6 +1,8 @@
 #pragma once
 #include <cmath>
 
+#define ToRAD(degree) degree * 0.01745329251
+
 namespace psycho2D
 {
 
@@ -78,7 +80,27 @@ namespace psycho2D
 			x = normalized.x;
 			y = normalized.y;
 		}
+
+		void rotate(float angle)
+		{
+			vec2 result(0.0f);
+
+			float rad = ToRAD(angle);
+			result.x = x * cosf(rad) - y * sinf(rad);
+			result.y = x * sinf(rad) + y * cosf(rad);
+
+			x = result.x;
+			y = result.y;
+		}
 	};
+
+	vec2 add(const vec2& v1, const vec2& v2)
+	{
+		vec2 result(0.0f);
+		result.x = v1.x + v2.x;
+		result.y = v1.y + v2.y;
+		return result;
+	}
 
 	vec2 sub(const vec2& v1, const vec2& v2)
 	{
@@ -111,6 +133,16 @@ namespace psycho2D
 			normalized.y = v.y / l;
 		}
 		return normalized;
+	}
+
+	vec2 rotate(const vec2& v, float angle)
+	{
+		vec2 result(0.0f);
+
+		float rad = ToRAD(angle);
+		result.x = v.x * cosf(rad) - v.y * sinf(rad);
+		result.y = v.x * sinf(rad) + v.y * cosf(rad);
+		return result;
 	}
 
 	float dot(const vec2& v1, const vec2& v2)
